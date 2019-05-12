@@ -1,0 +1,4 @@
+Running tests for N = 100000 and difficulty = 2
+Generation of puzzlesSet takes = 11.3 sec
+Solving random puzzle = 0.6 sec
+Test passed!

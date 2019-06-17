@@ -37,7 +37,7 @@ def get_name(client):
 
 
 def get_g_p(client, client_id):
-    global response_p_g, g, p, agreement, przeszedlem, ktory_wybiera
+    global response_p_g, g, p, agreement, alreadyUsedID, ktory_wybiera
     if client_id == ktory_wybiera:
         msg = 'Suggest please g,p [number comma number]'
         client.send(str(msg).encode('utf-8'))
@@ -54,7 +54,7 @@ def get_g_p(client, client_id):
         if response == 'y':
             agreement += 1
             print('Agreed on g = {} and p = {}'.format(g, p))
-            while len(response_p_g) != 2 or przeszedlem:
+            while len(response_p_g) != 2 or alreadyUsedID:
                 pass
         elif response == 'n':
             broadcast(bytes('You have to accept. Restars server and accepts next time.', 'utf-8'))
@@ -67,7 +67,7 @@ def handle_client(client):
     broadcast(str(msg).encode('utf-8'))
     clients[client] = name
     get_g_p(client, client_id)
-    przeszedlem = True
+    alreadyUsedID = True
     if client_id == ktory_wybiera:
         broadcast(bytes('Push enter to sent the public key', 'utf-8'))
     first = True
@@ -112,7 +112,7 @@ def broadcast(msg, prefix=""):
 
 g = 3
 p = 2003
-przeszedlem = False
+alreadyUsedID = False
 agreement = 1
 answer = 0
 should_print = True

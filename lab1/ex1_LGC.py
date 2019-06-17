@@ -107,7 +107,7 @@ def main():
     seed = random.randint(1, 1000)
     LCGGenerator = LCG(modulus,multiplier,increment,seed)
     # Get n numbers from generator
-    sequenceLength = 10
+    sequenceLength = 5
     makeTest = True
     if makeTest: # test accuracy of distinguisher in %
         pc = testDistinguisher(LCGGenerator, modulus, sequenceLength, noTests = 1000)

@@ -144,8 +144,8 @@ class MerklePuzzleCryptosystem:
         return self.choosenAESCipher.decrypt(ciphertext)
 
 def main():
-    # N = 100000
-    N = int(2**24)
+    N = 100000
+    # N = int(2**24)
     difficulty = 2
     last = time.time()
     print("Running tests for N = {} and difficulty = {}".format(N,difficulty))

@@ -31,7 +31,7 @@ def get_name(client):
         client_id = index
         index += 1
     else:
-        client.send(bytes('This nickname is already taken. Please provide different nick: ', "utf8"))
+        client.send(str('This nickname is already taken. Please provide different nick: ').encode('utf-8'))
         return get_name(client)
     return name, client_id
 

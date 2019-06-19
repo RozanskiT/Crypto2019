@@ -1,1 +1,4 @@
 projectArticles
+__pycache__
+*.pyc
+*.pdf
